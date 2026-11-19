@@ -1,84 +1,70 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Database Management</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Sidebar -->
     <div class="sidebar">
-        <h1>Database<br>Management</h1>
+      <h1>Database<br />Management</h1>
 
-        <button id="createTableBtn" class="create-table-btn">
-            + Create New Table
-        </button>
+      <button id="createTableBtn" class="create-table-btn">
+        + Create New Table
+      </button>
 
-        <div id="tableList"></div>
+      <div id="tableList"></div>
     </div>
 
     <!-- Main Content -->
     <div class="main">
+      <h1 id="tableHeading">Select a table</h1>
 
-        <h1 id="tableHeading">Select a table</h1>
+      <button id="addRecordBtn" class="add-record-btn">Add Record</button>
 
-        <button id="addRecordBtn" class="add-record-btn">
-            Add Record
-        </button>
-
-        <div id="tableContainer"></div>
-
+      <div id="tableContainer"></div>
     </div>
 
     <!-- Create Table Modal -->
     <div id="createTableModal" class="modal">
+      <div class="modal-content">
+        <span id="closeTableModal" class="close">&times;</span>
 
-        <div class="modal-content">
+        <h2>Create Table</h2>
 
-            <span id="closeTableModal" class="close">&times;</span>
+        <label for="tableName">Table name</label>
 
-            <h2>Create Table</h2>
+        <input type="text" id="tableName" placeholder="Table name" />
 
-            <label for="tableName">Table name</label>
-
-            <input type="text" id="tableName" placeholder="Table name">
-
-            <div class="column-heading">
-                <span>Field names</span>
-                <span>Type</span>
-            </div>
-
-            <div id="columns"></div>
-
-            <p id="addColumnBtn">Add another field</p>
-
-            <button id="submitTableBtn">Create Table</button>
-
+        <div class="column-heading">
+          <span>Field names</span>
+          <span>Type</span>
         </div>
 
+        <div id="columns"></div>
+
+        <p id="addColumnBtn">Add another field</p>
+
+        <button id="submitTableBtn">Create Table</button>
+      </div>
     </div>
 
     <!-- Add Record Modal -->
     <div id="addRecordModal" class="modal">
+      <div class="modal-content">
+        <span id="closeRecordModal" class="close">&times;</span>
 
-        <div class="modal-content">
+        <h2>Add Record</h2>
 
-            <span id="closeRecordModal" class="close">&times;</span>
+        <div id="recordFields"></div>
 
-            <h2>Add Record</h2>
-
-            <div id="recordFields"></div>
-
-            <button id="submitRecordBtn">Add Record</button>
-
-        </div>
-
+        <button id="submitRecordBtn">Add Record</button>
+      </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
-
-</body>
+  </body>
 </html>
